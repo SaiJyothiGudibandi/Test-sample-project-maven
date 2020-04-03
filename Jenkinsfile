@@ -3,7 +3,7 @@ pipeline {
 
    parameters 
 	{
-	   string(defaultValue: $testvar, description: 'Testing variable', name: 'testVarJob')
+	   string(defaultValue: $testvar1, description: 'Testing variable', name: 'testVarJob')
 	}
 
    stages {
