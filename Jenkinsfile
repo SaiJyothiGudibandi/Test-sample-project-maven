@@ -1,5 +1,8 @@
 pipeline {
    agent any
+       parameters {
+           string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+           }
 
    stages {
       stage('Clone') {
@@ -13,7 +16,9 @@ pipeline {
             // Run Maven on a Unix agent.
             sh "mvn web3j:generate-sources"
             echo "--------Testing parameterized feature---------"
-            sh "echo ${testVarJob}"
+            sh "echo ${params.PERSON}"
+            sh "echo $testVarJob"
+
 
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
