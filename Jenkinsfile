@@ -19,7 +19,7 @@ pipeline {
             sh "echo ${params.PERSON}"
             sh "echo $testVarJob"
             sh "echo $Git_URL"
-            sh "echo "Build number is: " + ${env.BUILD_NUMBER}"
+            sh "echo ${env.BUILD_NUMBER}"
 
 
             // To run Maven on a Windows agent, use
