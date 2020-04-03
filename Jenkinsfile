@@ -1,10 +1,6 @@
 pipeline {
    agent any
 
-     parameters {
-           string(defaultValue: ${params.$testvar1}, description: 'Testing variable', name: 'testVarJob')
-       }
-
    stages {
       stage('Clone') {
          steps {
