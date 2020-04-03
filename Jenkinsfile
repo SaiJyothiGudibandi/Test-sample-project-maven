@@ -1,7 +1,7 @@
 pipeline {
    agent any
        parameters {
-           string(name: 'testVarJob', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+           string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
            }
 
    stages {
@@ -16,8 +16,10 @@ pipeline {
             // Run Maven on a Unix agent.
             sh "mvn web3j:generate-sources"
             echo "--------Testing parameterized feature---------"
-            sh "echo ${params.testVarJob}"
+            sh "echo ${params.PERSON}"
+            sh "echo $testVarJob"
             sh "echo $Git_URL"
+            sh "echo "Build number is: ".${env.BUILD_NUMBER}"
 
 
             // To run Maven on a Windows agent, use
